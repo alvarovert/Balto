@@ -2,11 +2,11 @@ const Theme = {
 
     Colors:{
         primaryColor: '#FC9EF7',
-        secondaryColor: '#7DDBEA',
-        tertiaryColor: '#B57BE7',
+        secondaryColor: '#DDDD36',
+        tertiaryColor: '#282BD8',
         textColor: '#000000',
         stackTextColor: '#757373',
-        notasColor:'#EFEFEF',
+        notasColor:'#E9E9E9',
         tittleColor:'#CDCDCD'
     },
     TextSize: {
