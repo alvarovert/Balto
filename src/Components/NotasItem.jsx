@@ -3,6 +3,8 @@ import { Text, View, TouchableWithoutFeedback, Alert, StyleSheet} from 'react-na
 import NotasStyle from './NotasStyle';
 import Theme from '../Theme';
 
+
+
 const Stacks = props => {
     return(
         <View style={{ flexDirection: 'row', justifyContent:'space-between', width:115, paddingTop:5, paddingBottom:2}}>
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 20,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        backgroundColor: Theme.Colors.notasColor,
+        backgroundColor: Theme.Colors.ItemColor,
         alignSelf:'flex-start'
     }
 

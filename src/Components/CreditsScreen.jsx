@@ -6,33 +6,24 @@ import Theme from '../Theme';
 export default function CreditsScreen() {
     return(
         <View style={Style.Container}>
-            <Text>Balto</Text>
-            <View style={{alignSelf:'flex-start'}}>
-                <Text style={{fontSize:20}}>
-                    Dirigido
-                    <Text style={{fontSize:13}}> por</Text>
-                    
-                </Text>
-                <Text style={{fontSize:20}}>
-                    Producido
-                    <Text style={{fontSize:13}}> por</Text>
-
-                </Text>
-                <Text style={{fontSize:20}}>
-                    Diseño
-                    <Text style={{fontSize:13}}> de</Text>
-
-                </Text>
+            <View style={{ alignSelf:'center'}}>
+                <Text style={{padding:20, fontSize: 40}}>Balto</Text>
             </View>
-            <View style={{alignSelf:'flex-end'}}>
-            <Text style={{color: Theme.Colors.tertiaryColor, fontSize:25 }}> Alvaro Menacho</Text>
-            <Text style={{color: Theme.Colors.tertiaryColor, fontSize:25 }}> Alvaro Menacho</Text>
-            <Text style={{color: Theme.Colors.tertiaryColor, fontSize:25 }}> Alvaro Menacho</Text>
+            <View style={{}}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 20 }}>Director: </Text>
+                    <Text style={{ color: Theme.Colors.tertiaryColor, fontSize: 25 }}>Alvaro Menacho</Text>
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 20 }}>Productor: </Text>
+                    <Text style={{ color: Theme.Colors.tertiaryColor, fontSize: 25 }}>Alvaro Menacho</Text>
+                </View>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Text style={{ fontSize: 20 }}>Diseñador: </Text>
+                    <Text style={{ color: Theme.Colors.tertiaryColor, fontSize: 25 }}>Alvaro Menacho</Text>
+                </View>
             </View>
-            <Text style={{fontSize:20, padding:15}}>
-                    -Agradecimientos-
-            </Text>
-            <Text style={{color: Theme.Colors.tertiaryColor, fontSize:25 }}></Text>
+            
         </View>
     )
 }
@@ -45,8 +36,10 @@ const Style = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         flex: 1,
+        
         justifyContent: 'center',
-        alignItems: 'center',
+        
+        
         padding: 20, // espacio interno de la carta
         margin: 20,
         backgroundColor: Theme.Colors.secondaryColor

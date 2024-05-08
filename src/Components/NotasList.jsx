@@ -16,4 +16,3 @@ const NotasList = () => {
 }
 
 export default NotasList;
-

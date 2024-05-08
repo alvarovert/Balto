@@ -2,12 +2,13 @@ import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 import Theme from '../Theme';
 
+
 const styles = StyleSheet.create({
     text:{
         color: Theme.Colors.textColor,
         fontSize: Theme.TextSize.regular,
-        fontFamily: Theme.Fonst.main,
-        fontWeight: Theme.FontWeight.normal
+        fontWeight: Theme.FontWeight.normal,
+        fontFamily: Theme.Fonst.main
 
     },
     Bold:{
@@ -28,7 +29,6 @@ const styles = StyleSheet.create({
 
     },
     Title:{
-        backgroundColor: Theme.Colors.tittleColor,
         color: Theme.Colors.textColor,
         padding:3,
         alignSelf: 'flex-start',
