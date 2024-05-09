@@ -26,7 +26,7 @@ function Check2({id, completado, toggle}){
 
 
     return(
-        <Pressable onPress={ToggleMeta} style = {[{backgroundColor: NoHecho ? Theme.Colors.VerifyColor : '#AD0003' },{width:30, height:30, borderRadius:50}]} >
+        <Pressable onPress={ToggleMeta} style = {[{backgroundColor: NoHecho ? '#E9D508' : '#AD0003' },{width:25, height:25, borderRadius:50}]} >
         </Pressable>
     )
 }
@@ -51,6 +51,7 @@ export default function MetasItem({id, meta,subMeta1,subMeta2,subMeta3, fecha, h
                             <Check2/>
                             {subMeta1}
                         </Text>
+
                         <Text style={styles.TextExpand}>
                             <Check2/>
                             {subMeta2}
@@ -67,6 +68,16 @@ export default function MetasItem({id, meta,subMeta1,subMeta2,subMeta3, fecha, h
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: 14,
+        borderRadius: 21,
+        marginBottom: 10,
+        backgroundColor: "white",
+      },
+ 
     Container:{
         padding:10, 
         paddingBottom:3, 
@@ -81,15 +92,18 @@ const styles = StyleSheet.create({
     Text:{
         color: Theme.Colors.textColor,
         fontSize: Theme.TextSize.regular,
-        paddingRight:35,
-        paddingLeft: 15,
-        paddingVertical: 12
+        fontWeight: "600",
+        letterSpacing: -0.011 * 16, // 16 = baseFontSize
+        flexShrink: 1,
+        marginHorizontal: 18,
+        marginVertical: 12
     },
     TextExpand:{
         color: Theme.Colors.textColor,
         fontSize: Theme.TextSize.Small,
         paddingVertical: 5,
         paddingHorizontal: 25,
+        
         
     },
     Row:{
@@ -116,18 +130,21 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     CheckMark: {
-        width: 20,
-        height: 20,
-        borderRadius: 7,
+        width: 30,
+        height: 30,
+        borderRadius: 17,
     },
     ContainerTextCheckBox: {
       flex: 1,
+      marginHorizontal: 15,
+      width: 370,
+      height: 50,
       paddingLeft: 15,
       flexDirection: "row",
       alignItems: "center",
       flexGrow: 1,
       backgroundColor: Theme.Colors.MetasItem,
-      borderRadius: 50
+      borderRadius: 10
 
     },
     ContainerTextExpand: {
@@ -135,5 +152,9 @@ const styles = StyleSheet.create({
       paddingLeft: 10,
       flexDirection: "column",
       flexGrow: 1,
+      alignItems:"flex-start",
+      borderRadius: 50,
+      marginHorizontal: 6
+
     }
 })
