@@ -32,6 +32,7 @@ const NotasItem = (props) => {
 const styles = StyleSheet.create({
     Container:{
         marginHorizontal:10,
+        marginTop:10,
         padding:10, 
         paddingBottom:3, 
         paddingTop:5,

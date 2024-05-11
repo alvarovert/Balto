@@ -17,7 +17,7 @@ const Theme = {
         TextColor2: '#262626',
         DetailsColor: '#D3E090',
         TittleColor:'#C9C38D',
-        MetasItem: '#DBEBF0'
+        MetasItem: '#8FCAD4'
         // NUEVA PALETA
         // MainColor: '#C9C38D',
         // ItemColor: '#EDE6A6',

@@ -30,7 +30,7 @@ function Check2({id, completado, toggle}){
         </Pressable>
     )
 }
-export default function MetasItem({id, meta,subMeta1,subMeta2,subMeta3, fecha, hora}){
+export default function MetasItem({id, meta, fecha, hora, subMetas}){
     const [DividirM, Presionar] = useState(false);
 
     const Expandir = () => {
@@ -46,20 +46,15 @@ export default function MetasItem({id, meta,subMeta1,subMeta2,subMeta3, fecha, h
             </View>
             <View>
                 {DividirM && (
-                    <View style={styles.ContainerTextExpand}>
-                        <Text style={styles.TextExpand}>
-                            <Check2/>
-                            {subMeta1}
-                        </Text>
-
-                        <Text style={styles.TextExpand}>
-                            <Check2/>
-                            {subMeta2}
-                        </Text>
-                        <Text style={styles.TextExpand}>
-                            <Check2/>
-                            {subMeta3}
-                        </Text>
+                    <View >
+                        {subMetas.map((subMeta, index) =>(
+                            <View key={index} style={styles.ContainerTextExpand}>
+                                <Check2/>
+                                <Text style={styles.TextExpand}>
+                                    {subMeta}
+                                </Text>
+                            </View>
+                        ))}
                     </View>
                 )}
             </View>
@@ -101,8 +96,7 @@ const styles = StyleSheet.create({
     TextExpand:{
         color: Theme.Colors.textColor,
         fontSize: Theme.TextSize.Small,
-        paddingVertical: 5,
-        paddingHorizontal: 25,
+        marginHorizontal: 30
         
         
     },
@@ -137,14 +131,15 @@ const styles = StyleSheet.create({
     ContainerTextCheckBox: {
       flex: 1,
       marginHorizontal: 15,
+      marginVertical: 10,
       width: 370,
-      height: 50,
+      height: 60,
       paddingLeft: 15,
       flexDirection: "row",
       alignItems: "center",
       flexGrow: 1,
       backgroundColor: Theme.Colors.MetasItem,
-      borderRadius: 10
+      borderRadius: 50
 
     },
     ContainerTextExpand: {
@@ -154,7 +149,9 @@ const styles = StyleSheet.create({
       flexGrow: 1,
       alignItems:"flex-start",
       borderRadius: 50,
-      marginHorizontal: 6
+      marginHorizontal: 23,
+      marginTop: 10,
+      marginBottom: 15
 
     }
 })

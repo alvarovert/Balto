@@ -8,7 +8,7 @@ export default MetasList = () => {
     return(
         <FlatList
         data={Metas}
-        ItemSeparatorComponent={() => <Text> </Text>}
+        
         renderItem={({item:metas}) => (
             <MetasItem {...metas}></MetasItem>
         )}
