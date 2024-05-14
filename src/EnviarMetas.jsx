@@ -2,33 +2,28 @@ import React, {useState} from "react";
 import { Keyboard, View, TouchableOpacity, TextInput } from "react-native";
 import Metas from "./Components/data/Metas";
 
+const [InputVisible, setInputVisible] = useState(false);
+const [InputText, setInputText] = useState("");
+const [buttontext, setButtonText] = useState("agregar");
+
+const TextChange = (text) => {
+    setInputText(text);
+}
 const EnviarMetas = () => {
-    Metas.forEach(element => {
-        console.log(element.fecha)
-    });
+    if (buttontext === "agregar"){
+        setInputVisible(true);
+        setButtonText("+");
+    } else {
+        if (InputText.trim() != ""){
+            console.log(InputText);
+        }else{
+            setInputVisible(false);
+            setButtonText("agregar");
+        }
+        setInputVisible(false);
+        setInputText("");
+        setButtonText("agregar");
+    }
 };
 
 export default EnviarMetas;
-
-function MetasInput(){
-    const [InputVisible, setInputVisible] = useState(false);
-    const [InputText, setInputText] = useState(""); 
-
-    const TouchablePress = () => {
-        setInputVisible(true);
-    };
-
-    const TextChange = (text) => {
-        setInputText(text);
-    }
-
-    const KeyPress = ({nativeEvent}) => {
-        if (nativeEvent.key === "Enter"){
-            console.log(InputText);
-            setInputVisible(false);
-            setInputText("");
-            Keyboard.dismiss();
-        }
-    }
-
-}

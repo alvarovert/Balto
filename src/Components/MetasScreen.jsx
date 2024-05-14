@@ -3,39 +3,46 @@ import { View, TouchableOpacity, Text, TextInput, Keyboard } from "react-native"
 import Constants from "expo-constants";
 import MetasList from "./MetasList";
 import Theme from "../Theme.js";
+import Metas from "./data/Metas.js";
 
 
 export default function MetasScreen() {
     const [InputVisible, setInputVisible] = useState(false);
-    const [InputText, setInputText] = useState(""); 
-
-    const TouchablePress = () => {
-        setInputVisible(!InputVisible);
-    };
+    const [InputText, setInputText] = useState("");
+    const [buttontext, setButtonText] = useState("agregar");
 
     const TextChange = (text) => {
         setInputText(text);
     }
 
-    const KeyPress = ({nativeEvent}) => {
-        if (nativeEvent.key === "Enter"){
-            console.log(InputText);
+    const handlePress = () =>{
+        if (buttontext === "agregar"){
+            setInputVisible(true);
+            setButtonText("+");
+        } else {
+            if (InputText.trim() != ""){
+                const Meta = {meta: InputText, subMetas: []};
+                Metas.unshift(Meta);
+                
+            }else{
+                setInputVisible(false);
+                setButtonText("agregar");
+            }
             setInputVisible(false);
             setInputText("");
-            Keyboard.dismiss();
+            setButtonText("agregar");
         }
-    }
+    };
     return(
         <View style={{marginVertical: Constants.statusBarHeight, backgroundColor: Theme.Colors.MainColor}} >
-            <TouchableOpacity style={{padding: 10, alignItems: 'flex-end'}} onPress={TouchablePress}>
-                <Text style= {{fontSize:18, color:'#8FCAD4', fontWeight:'bold'}}>agregar</Text>
+            <TouchableOpacity style={{padding: 10, alignItems: 'flex-end'}} onPress={handlePress}>
+                <Text style= {{fontSize:18, color:'#8FCAD4', fontWeight:'bold'}}>{buttontext}</Text>
             </TouchableOpacity>
             {InputVisible && (
                 <TextInput
                 style={{height: 40, borderColor: 'gray', borderWidth: 1, paddingHorizontal: 10}}
-                placeholder="meta aqui"
+                placeholder="¿Que vas a logar?"
                 onChangeText={TextChange}
-                onKeyPress={KeyPress}
                 autoFocus={true}
                 value={InputText}
                 />
