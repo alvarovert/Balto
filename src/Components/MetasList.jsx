@@ -8,7 +8,6 @@ export default MetasList = () => {
     return(
         <FlatList
         data={Metas}
-        
         renderItem={({item:metas}) => (
             <MetasItem {...metas}></MetasItem>
         )}

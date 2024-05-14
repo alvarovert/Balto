@@ -11,8 +11,8 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator>
         <Drawer.Screen name ="Metas" component={MetasScreen} options={{headerShown: false}} />
-        <Drawer.Screen name ="Note" component={NoteScreen} options={{ headerShown: false}} />
-        <Drawer.Screen name ="Credits" component={CreditsScreen} options={{headerShown: false}} />
+        <Drawer.Screen name ="Diario" component={NoteScreen} options={{ headerShown: false}} />
+        <Drawer.Screen name ="Creditos" component={CreditsScreen} options={{headerShown: false}} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
